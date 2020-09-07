@@ -7,6 +7,11 @@
     <meta name="date" content="2020-09-07" />
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
     <script src="libs/panelset/panelset.js"></script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"x648ed12aaad40e2957d03728f500299","expires":1}</script>
+    <script src="libs/himalaya/himalaya.js"></script>
+    <script src="libs/js-cookie/js.cookie.js"></script>
+    <link href="libs/editable/editable.css" rel="stylesheet" />
+    <script src="libs/editable/editable.js"></script>
     <script src="libs/htmlwidgets/htmlwidgets.js"></script>
     <script src="libs/jquery/jquery.min.js"></script>
     <link href="libs/leaflet/leaflet.css" rel="stylesheet" />
@@ -34,6 +39,8 @@ class: center, middle, inverse, title-slide
 ### 2020-09-07
 
 ---
+
+
 
 
 
@@ -89,133 +96,119 @@ Four hour workshop for three days with [breaks].
 --
 
 
----
-background-image: url(https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
-background-position: 50% 50%
-class: center, bottom, inverse
-
-# You only live once!
 
 ---
 
-# Hello Ninja
+# Jon Snow and GIS
 
-As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
+One of the earliest know example of using geographic inquiry was used for understanding a health epidemic
 
-1. The [remark.js](https://remarkjs.com) library;
+Starting on August 31, 1854, an outbreak of cholera hit the London district called Soho.  Over the course of three days, 127 people died from the disease and by September 10, over 500 had died.  Physician John Snow was able through talking to local residents narrow to down his suspicion of the source of the disease to a water pump on Broad Street. Commissioning cartographer Charles Cheffins,  Snow  had a map created that mapped out the locations of the local water wells and cholera deaths to back his argument about the contaminated pump. John Snow first presented his maps at the December 4, 1854 meeting of the London Epidemiological Society and then subsequently published his updated work in the second edition of On the Mode of Communication of Cholera.
 
-1. The **xaringan** package;
-
-Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
+[Jon Snow Map](http://www.arcgis.com/apps/PublicInformation/index.html?appid=d7deb67f810d46dfacb80ff80ac224e9)
 
 ---
+.center[![trachoma](GIS_application.jpg)]
 
-# remark.js
+#### Application of GIS across disciplines, profession and organisations.
 
-You can see an introduction of remark.js from [its homepage](https://remarkjs.com). You should read the [remark.js Wiki](https://github.com/gnab/remark/wiki) at least once to know how to
-
-- create a new slide (Markdown syntax&lt;sup&gt;*&lt;/sup&gt; and slide properties);
-
-- format a slide (e.g. text alignment);
-
-- configure the slideshow;
-
-- and use the presentation (keyboard shortcuts).
-
-It is important to be familiar with remark.js before you can understand the options in **xaringan**.
-
-.footnote[[*] It is different with Pandoc's Markdown! It is limited but should be enough for presentation purposes. Come on... You do not need a slide for the Table of Contents! Well, the Markdown support in remark.js [may be improved](https://github.com/gnab/remark/issues/142) in the future.]
-
----
-background-image: url(https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
-background-size: cover
-class: center, bottom, inverse
-
-# I was so happy to have discovered remark.js!
-
----
-class: inverse, middle, center
-
-# Using xaringan
-
+[img-source](https://www.tes.com/lessons/tyhAxMfaWhMpog/using-gis-to-solve-contemporary-challenges)
 ---
 
-# xaringan
+### What make sense in the urban context?
 
-Provides an R Markdown output format `xaringan::moon_reader` as a wrapper for remark.js, and you can use it in the YAML metadata, e.g.
+.can-edit.key-likes[
+- Lets Write the themes
+]
 
-```yaml
+--
+
+[Check the UDRI website](http://www.udri.org/projects/mumbai-gis/)
 ---
-title: "A Cool Presentation"
-output:
-  xaringan::moon_reader
-    yolo: true
-    nature:
-      autoplay: 30000
----
-```
-
-See the help page `?xaringan::moon_reader` for all possible options that you can use.
-
----
-
-# remark.js vs xaringan
-
-Some differences between using remark.js (left) and using **xaringan** (right):
+### Spatial Orientation is Important !
 
 .pull-left[
-1. Start with a boilerplate HTML file;
+- Knowledge of how objects are places with reference to one another is useful
+- With GIS any object on earth can be associated with a spatial reference
+- GIS is primarily used to manage the spatial information for our object of interest
 
-1. Plain Markdown;
 
-1. Write JavaScript to autoplay slides;
+- Lets consider an example of spatial reference in case of a hand drawn map for GIS.
 
-1. Manually configure MathJax;
 
-1. Highlight code with `*`;
-
-1. Edit Markdown source and refresh browser to see updated slides;
 ]
 
 .pull-right[
-1. Start with an R Markdown document;
-
-1. R Markdown (can embed R/other code chunks);
-
-1. Provide an option `autoplay`;
-
-1. MathJax just works;&lt;sup&gt;*&lt;/sup&gt;
-
-1. Highlight code with `{{}}`;
-
-1. The RStudio addin "Infinite Moon Reader" automatically refreshes slides on changes;
+.right[![trachoma](Bombay.jpg)]
 ]
 
-.footnote[[*] Not really. See next page.]
+---
+# What is GIS?
+
+- Geographic Information System
+
+.pull-left[
+GIS is a computer-based information system that enables capture, modeling, manipulation, retrieval, analysis and presentation of geographically referenced data
+
+--
+- Survey
+- Cartography
+- Remote Sensing
+
+]
+
+.pull-right[
+.right[![trachoma](layer.jpg)]
+
+[image source](https://www.nationalgeographic.org/encyclopedia/geographic-information-system-gis/)
+]
 
 ---
 
-# Math Expressions
+# File formats
 
-You can write LaTeX math expressions inside a pair of dollar signs, e.g. &amp;#36;\alpha+\beta$ renders `\(\alpha+\beta\)`. You can use the display style with double dollar signs:
 
-```
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
-```
+.pull-left[
+ Vector File Formats
 
-`$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$`
+- Shapefiles
+- GeoJSON
+- AutoCAD DXF
+- KML
+]
 
-Limitations:
 
-1. The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
+.pull-right[
 
-1. There should not be spaces after the opening `$` or before the closing `$`.
+Raster File Formats
+- TIFF
+- IMG
 
-1. Math does not work on the title slide (see [#61](https://github.com/yihui/xaringan/issues/61) for a workaround).
+]
+
+.center[![trachoma](file.png)]
 
 ---
 
-# R Code
+
+
+# Spatial Analysis
+
+- In the context of mainstream GIS software, the term analysis refers to data manipulation and data querying.
+
+- For example, you record the location of crop fields in a well defined study area. You then map the location of each potential crop field (a GIS task). At this point, you might be inclined to make inferences about the observed pattern.
+
+---
+
+## Vector and Raster 
+
+- In GIS, real world observations (objects or events that can be recorded in 2D or 3D space) need to be reduced to spatial entities.
+
+- These entities are expressed as a vector data and raster data
+
+.center[![trachoma](vector_vs_raster.jpg)]
+
+---
 
 
 ```r
@@ -386,8 +379,8 @@ library(leaflet)
 leaflet() %&gt;% addTiles() %&gt;% setView(-93.65, 42.0285, zoom = 17)
 ```
 
-<div id="htmlwidget-fd75a443c43f2478385f" style="width:100%;height:432px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-fd75a443c43f2478385f">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-29b3e9dd7baec1936750" style="width:100%;height:432px;" class="leaflet html-widget"></div>
+<script type="application/json" data-for="htmlwidget-29b3e9dd7baec1936750">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}</script>
 
 ---
 
@@ -399,8 +392,8 @@ DT::datatable(
 )
 ```
 
-<div id="htmlwidget-54efbda6eecb25bd3032" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-54efbda6eecb25bd3032">{"x":{"filter":"none","fillContainer":false,"data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant"],[21,21,22.8,21.4,18.7,18.1],[6,6,4,6,8,6],[160,160,108,258,360,225],[110,110,93,110,175,105],[3.9,3.9,3.85,3.08,3.15,2.76],[2.62,2.875,2.32,3.215,3.44,3.46]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n      <th>drat<\/th>\n      <th>wt<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-227f5fa5f4075cb80ed0" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-227f5fa5f4075cb80ed0">{"x":{"filter":"none","fillContainer":false,"data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant"],[21,21,22.8,21.4,18.7,18.1],[6,6,4,6,8,6],[160,160,108,258,360,225],[110,110,93,110,175,105],[3.9,3.9,3.85,3.08,3.15,2.76],[2.62,2.875,2.32,3.215,3.44,3.46]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n      <th>drat<\/th>\n      <th>wt<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 
 ---
 

@@ -23,6 +23,10 @@ options(htmltools.dir.version = FALSE)
 xaringanExtra::use_panelset()
 ```
 
+```{r xaringan-editable, echo=FALSE}
+xaringanExtra::use_editable(expires = 1)
+```
+
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
 library(xaringanthemer)
 style_duo_accent(
@@ -79,133 +83,119 @@ Four hour workshop for three days with [breaks].
 --
 
 
----
-background-image: url(`r xaringan:::karl`)
-background-position: 50% 50%
-class: center, bottom, inverse
-
-# You only live once!
 
 ---
 
-# Hello Ninja
+# Jon Snow and GIS
 
-As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
+One of the earliest know example of using geographic inquiry was used for understanding a health epidemic
 
-1. The [remark.js](https://remarkjs.com) library;
+Starting on August 31, 1854, an outbreak of cholera hit the London district called Soho.  Over the course of three days, 127 people died from the disease and by September 10, over 500 had died.  Physician John Snow was able through talking to local residents narrow to down his suspicion of the source of the disease to a water pump on Broad Street. Commissioning cartographer Charles Cheffins,  Snow  had a map created that mapped out the locations of the local water wells and cholera deaths to back his argument about the contaminated pump. John Snow first presented his maps at the December 4, 1854 meeting of the London Epidemiological Society and then subsequently published his updated work in the second edition of On the Mode of Communication of Cholera.
 
-1. The **xaringan** package;
-
-Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
+[Jon Snow Map](http://www.arcgis.com/apps/PublicInformation/index.html?appid=d7deb67f810d46dfacb80ff80ac224e9)
 
 ---
+.center[![trachoma](GIS_application.jpg)]
 
-# remark.js
+#### Application of GIS across disciplines, profession and organisations.
 
-You can see an introduction of remark.js from [its homepage](https://remarkjs.com). You should read the [remark.js Wiki](https://github.com/gnab/remark/wiki) at least once to know how to
-
-- create a new slide (Markdown syntax<sup>*</sup> and slide properties);
-
-- format a slide (e.g. text alignment);
-
-- configure the slideshow;
-
-- and use the presentation (keyboard shortcuts).
-
-It is important to be familiar with remark.js before you can understand the options in **xaringan**.
-
-.footnote[[*] It is different with Pandoc's Markdown! It is limited but should be enough for presentation purposes. Come on... You do not need a slide for the Table of Contents! Well, the Markdown support in remark.js [may be improved](https://github.com/gnab/remark/issues/142) in the future.]
-
----
-background-image: url(`r xaringan:::karl`)
-background-size: cover
-class: center, bottom, inverse
-
-# I was so happy to have discovered remark.js!
-
----
-class: inverse, middle, center
-
-# Using xaringan
-
+[img-source](https://www.tes.com/lessons/tyhAxMfaWhMpog/using-gis-to-solve-contemporary-challenges)
 ---
 
-# xaringan
+### What make sense in the urban context?
 
-Provides an R Markdown output format `xaringan::moon_reader` as a wrapper for remark.js, and you can use it in the YAML metadata, e.g.
+.can-edit.key-likes[
+- Lets Write the themes
+]
 
-```yaml
+--
+
+[Check the UDRI website](http://www.udri.org/projects/mumbai-gis/)
 ---
-title: "A Cool Presentation"
-output:
-  xaringan::moon_reader
-    yolo: true
-    nature:
-      autoplay: 30000
----
-```
-
-See the help page `?xaringan::moon_reader` for all possible options that you can use.
-
----
-
-# remark.js vs xaringan
-
-Some differences between using remark.js (left) and using **xaringan** (right):
+### Spatial Orientation is Important !
 
 .pull-left[
-1. Start with a boilerplate HTML file;
+- Knowledge of how objects are places with reference to one another is useful
+- With GIS any object on earth can be associated with a spatial reference
+- GIS is primarily used to manage the spatial information for our object of interest
 
-1. Plain Markdown;
 
-1. Write JavaScript to autoplay slides;
+- Lets consider an example of spatial reference in case of a hand drawn map for GIS.
 
-1. Manually configure MathJax;
 
-1. Highlight code with `*`;
-
-1. Edit Markdown source and refresh browser to see updated slides;
 ]
 
 .pull-right[
-1. Start with an R Markdown document;
-
-1. R Markdown (can embed R/other code chunks);
-
-1. Provide an option `autoplay`;
-
-1. MathJax just works;<sup>*</sup>
-
-1. Highlight code with `{{}}`;
-
-1. The RStudio addin "Infinite Moon Reader" automatically refreshes slides on changes;
+.right[![trachoma](Bombay.jpg)]
 ]
 
-.footnote[[*] Not really. See next page.]
+---
+# What is GIS?
+
+- Geographic Information System
+
+.pull-left[
+GIS is a computer-based information system that enables capture, modeling, manipulation, retrieval, analysis and presentation of geographically referenced data
+
+--
+- Survey
+- Cartography
+- Remote Sensing
+
+]
+
+.pull-right[
+.right[![trachoma](layer.jpg)]
+
+[image source](https://www.nationalgeographic.org/encyclopedia/geographic-information-system-gis/)
+]
 
 ---
 
-# Math Expressions
+# File formats
 
-You can write LaTeX math expressions inside a pair of dollar signs, e.g. &#36;\alpha+\beta$ renders $\alpha+\beta$. You can use the display style with double dollar signs:
 
-```
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
-```
+.pull-left[
+ Vector File Formats
 
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
+- Shapefiles
+- GeoJSON
+- AutoCAD DXF
+- KML
+]
 
-Limitations:
 
-1. The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
+.pull-right[
 
-1. There should not be spaces after the opening `$` or before the closing `$`.
+Raster File Formats
+- TIFF
+- IMG
 
-1. Math does not work on the title slide (see [#61](https://github.com/yihui/xaringan/issues/61) for a workaround).
+]
+
+.center[![trachoma](file.png)]
 
 ---
 
-# R Code
+
+
+# Spatial Analysis
+
+- In the context of mainstream GIS software, the term analysis refers to data manipulation and data querying.
+
+- For example, you record the location of crop fields in a well defined study area. You then map the location of each potential crop field (a GIS task). At this point, you might be inclined to make inferences about the observed pattern.
+
+---
+
+## Vector and Raster 
+
+- In GIS, real world observations (objects or events that can be recorded in 2D or 3D space) need to be reduced to spatial entities.
+
+- These entities are expressed as a vector data and raster data
+
+.center[![trachoma](vector_vs_raster.jpg)]
+
+---
 
 ```{r comment='#'}
 # a boring regression
